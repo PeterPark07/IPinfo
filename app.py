@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def show_ip():
     user_ipv4 = request.headers.get('X-Forwarded-For')
-    user_ipv6 = request.headers.get(socket.getaddrinfo(import socket, None)[-1][-1][0])
+    user_ipv6 = request.headers.get(socket.getaddrinfo(user_ipv4, None)[-1][-1][0])
 
     return f"Your IPv4 address is: {user_ipv4}<br>Your IPv6 address is: {user_ipv6}"
 
