@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def show_ip():
-    user_ipv4 = request.headers.get('X-Forwarded-For')
+    user_ipv4 = request.headers.get('X-Forwarded-For').split(',')[0].strip()
     try :
         user_ipv6 = request.headers.get(socket.getaddrinfo(user_ipv4, None)[-1][-1][0])
     except:
