@@ -14,4 +14,4 @@ def show_ip():
     return f"Your IPv4 address is: {user_ipv4}<br>Your IPv6 address is: {user_ipv6}"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run()
